@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <!-- ===== THANH ĐIỀU HƯỚNG ===== -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">MyWebsite</div>
+
+        <!-- Danh sách menu -->
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+
+        <!-- Biểu tượng hamburger (chỉ hiện trên mobile) -->
+        <div class="menu-icon" aria-label="Mở menu" role="button">&#9776;</div>
+    </nav>
+
+    <!-- ===== NỘI DUNG TRANG ===== -->
+    <main class="content">
+        <h1>Chào mừng đến với MyWebsite!</h1>
+        <p>
+            Thu nhỏ cửa sổ trình duyệt xuống dưới <strong>768px</strong> để thấy
+            thanh điều hướng chuyển sang chế độ <strong>mobile</strong> với biểu tượng ☰.
+        </p>
+
+        <div class="demo-box">
+            <h2>📌 Cách hoạt động</h2>
+            <ul>
+                <li>🖥️ <strong>Desktop (> 768px):</strong> Menu hiển thị ngang, dùng Flexbox.</li>
+                <li>📱 <strong>Mobile (≤ 768px):</strong> Menu ẩn, biểu tượng ☰ xuất hiện.</li>
+                <li>👆 <strong>Nhấn ☰:</strong> Menu mở ra dọc bằng JavaScript.</li>
+            </ul>
+        </div>
+
+        <div class="demo-box tech">
+            <h2>🛠️ Kỹ thuật sử dụng</h2>
+            <ul>
+                <li><code>display: flex</code> — Căn chỉnh navbar theo hàng ngang</li>
+                <li><code>@media (max-width: 768px)</code> — Responsive cho mobile</li>
+                <li><code>classList.toggle("active")</code> — Mở/đóng menu bằng JS</li>
+                <li><code>position: absolute</code> — Menu mobile trải rộng toàn màn hình</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>Bản quyền &copy; 2024 MyWebsite — Bài thực hành Responsive Navbar</p>
+    </footer>
+
+</body>
+</html>

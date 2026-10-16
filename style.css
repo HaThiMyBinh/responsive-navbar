@@ -1,0 +1,204 @@
+/* ===========================
+   Reset
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ===========================
+   NAVBAR — Desktop
+   Dùng Flexbox để căn chỉnh
+   logo và menu trên cùng hàng
+   =========================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* Logo trái, menu phải */
+    align-items: center;             /* Căn giữa theo chiều dọc */
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    position: relative;              /* Cần để .nav-links absolute hoạt động đúng */
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f0c040;
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   NAV-LINKS — Desktop: hiển thị ngang
+   =========================== */
+.nav-links {
+    list-style: none;
+    display: flex;                   /* Xếp menu theo hàng ngang */
+    gap: 5px;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #f0c040;
+    border-bottom-color: #f0c040;
+}
+
+/* ===========================
+   MENU-ICON — Hamburger ☰
+   Ẩn trên desktop, hiện trên mobile
+   =========================== */
+.menu-icon {
+    display: none;                   /* Ẩn trên desktop */
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    user-select: none;
+}
+
+.menu-icon:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===========================
+   RESPONSIVE — Mobile (≤ 768px)
+   =========================== */
+@media (max-width: 768px) {
+
+    /* Ẩn menu ngang, chuyển sang menu dọc */
+    .nav-links {
+        display: none;               /* Ẩn mặc định trên mobile */
+        flex-direction: column;      /* Xếp dọc khi mở */
+        position: absolute;          /* Đặt bên dưới navbar */
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links li {
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-bottom: none;
+    }
+
+    .nav-links a:hover {
+        background-color: #444;
+        color: #f0c040;
+    }
+
+    /* Hiện hamburger icon trên mobile */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Khi có class .active (do JS thêm vào): hiện menu */
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* ===========================
+   MAIN CONTENT
+   =========================== */
+.content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.content > p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.demo-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: 5px solid #2980b9;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.demo-box.tech {
+    border-left-color: #27ae60;
+}
+
+.demo-box h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #2c3e50;
+}
+
+.demo-box ul {
+    padding-left: 5px;
+    list-style: none;
+}
+
+.demo-box ul li {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+code {
+    background-color: #eef;
+    color: #1a5276;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+    text-align: center;
+    background-color: #2c3e50;
+    color: #aaa;
+    padding: 15px;
+    font-size: 13px;
+    margin-top: 20px;
+}
